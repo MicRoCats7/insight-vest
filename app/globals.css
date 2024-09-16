@@ -1,3 +1,5 @@
+@import url('@/public/general-sans.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +7,23 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+.wrapper {
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.font-general-sans-medium {
+  font-family: GeneralSans-Medium;
+}
+
+.font-general-sans-semibold {
+  font-family: GeneralSans-Semibold;
+}
+
+.font-general-sans-regular {
+  font-family: GeneralSans-Regular;
 }
 
 @media (prefers-color-scheme: dark) {
