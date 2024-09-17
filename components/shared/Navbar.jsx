@@ -10,7 +10,7 @@ function Navbar() {
     const pathName = usePathname();
 
     return (
-        <section className='flex items-center justify-between wrapper py-5'>
+        <section className='flex items-center justify-between wrapper py-5 bg-transparent'>
             <div className='flex items-center gap-4'>
                 <Image
                     src="/assets/Ellipse 1.svg"
