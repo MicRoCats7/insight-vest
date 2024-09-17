@@ -38,6 +38,29 @@
   display: inline-block;
 }
 
+.cool-hover{
+  background: linear-gradient(0deg, #7A1CAC, #7A1CAC) no-repeat right bottom / 0 var(--bg-h);
+  transition: background-size 500ms;
+  --bg-h: 100%;
+}
+
+.cool-hover:where(:hover, :focus-visible){
+  background-size: 100% var(--bg-h);
+  background-position-x: left;
+}
+
+.cool-hover-img{
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.cool-hover-img:hover{
+  -webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
