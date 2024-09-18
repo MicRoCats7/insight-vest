@@ -16,7 +16,6 @@ function guidGenerator() {
     };
     return (S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4());
 }
-console.log(guidGenerator());
 
 export const getHotNews = {
     id: "2d528b7b-57e1-c431-ccc6-000ae0969f82",
