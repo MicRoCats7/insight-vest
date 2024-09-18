@@ -7,7 +7,6 @@ import { Separator } from '../ui/separator';
 function Footer() {
   return (
     <section className='pt-[60px] pb-5 border-t border-[#ffffff30] bg-[#191A19]'>
-      <div className='bg-[#191A19] absolute bottom-0 left-0 right-0'></div>
       <div className='wrapper'>
         <div className='flex items-center justify-between'>
           <Image
