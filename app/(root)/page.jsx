@@ -4,8 +4,13 @@ import arrow from '@/public/assets/home/arrow-text.svg';
 import circle_invest from '@/public/assets/home/circle_invest.svg';
 import Image from 'next/image';
 import { MdKeyboardArrowRight } from "react-icons/md";
+import CardLearning from '@/components/shared/CardLearning';
+import { getLearning } from '@/constants/home';
+import CardListSaham from '@/components/shared/CardListSaham';
 
 export default function Home() {
+  const specialIndexes = [1, 2, 5];
+
   return (
     <section
       className="wrapper"
@@ -56,6 +61,20 @@ export default function Home() {
         >
           All Investment Knowledge, Only on One Platform!
         </h1>
+      </div>
+      <div className='flex flex-col gap-5'>
+        <h1 className='special-text font-general-sans-semibold text-[30px]'>Start learning to invest with us</h1>
+        <div className='grid grid-cols-2 gap-5'>
+          {getLearning.map((item, index) => (
+            <CardLearning key={index} item={item} isSpecial={specialIndexes.includes(index)} />
+          ))}
+        </div>
+      </div>
+      <div className='grid grid-cols-4 gap-5'>
+        <CardListSaham />
+        <CardListSaham />
+        <CardListSaham />
+        <CardListSaham />
       </div>
     </section>
   );
