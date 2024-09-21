@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 import Image from 'next/image';
 import { MdKeyboardArrowRight } from 'react-icons/md';
+import Link from 'next/link';
 
 function CardLearning({ item, isSpecial, isOdd }) {
     const [isMobile, setIsMobile] = useState(false);
@@ -37,14 +38,17 @@ function CardLearning({ item, isSpecial, isOdd }) {
                     <p className="font-general-sans-regular text-white md:text-lg text-base">
                         {item.desc}
                     </p>
-                    <div className="flex items-center justify-between bg-[#FFFFFF] lg:w-1/2 md:w-5/6 rounded-[10px] cursor-pointer mt-4">
-                        <span className="pl-[15px] py-[7px] font-general-sans-semibold lg:text-base md:text-sm text-xs">
-                            Start Learning
-                        </span>
-                        <div className="bg-[#EBEBEB] p-2 rounded-r-[10px]">
-                            <MdKeyboardArrowRight size={25} />
+                    <Link href={`education/${item.id}`}>
+                        <div className="flex items-center justify-between bg-[#FFFFFF] w-1/2 rounded-[10px] cursor-pointer mt-4">
+                            <span className="pl-[15px] py-[7px] font-general-sans-semibold">
+                                Start Learning
+                            </span>
+                            <div className="bg-[#EBEBEB] p-2 rounded-r-[10px]">
+                                <MdKeyboardArrowRight size={25} />
+                            </div>
+
                         </div>
-                    </div>
+                    </Link>
                 </div>
             </CardContent>
             <Image

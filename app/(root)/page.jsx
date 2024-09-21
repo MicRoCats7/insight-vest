@@ -17,7 +17,7 @@ export default function Home() {
       className="md:wrapper wrapper-mobile"
     >
       <div style={{
-        backgroundImage: "url('/assets/home/bg-noise-home.svg')",
+        backgroundImage: "url('/assets/home/bg-noise-home.png')",
         backgroundSize: "100%",
         backgroundRepeat: "no-repeat",
         height: "100%",
