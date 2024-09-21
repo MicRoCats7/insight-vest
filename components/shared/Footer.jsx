@@ -3,17 +3,16 @@ import React from 'react'
 import { FaInstagram, FaXTwitter } from "react-icons/fa6";
 import { CiFacebook } from "react-icons/ci";
 import { Separator } from '../ui/separator';
+import logo from '@/public/assets/logo-notext.svg'
 
 function Footer() {
   return (
     <section className='pt-[60px] pb-5 border-t border-[#ffffff30] bg-[#191A19]'>
-      <div className='wrapper'>
+      <div className='md:wrapper wrapper-mobile'>
         <div className='flex items-center justify-between'>
           <Image
-            src="/assets/Ellipse 1.svg"
+            src={logo}
             alt="Logo"
-            width={100}
-            height={100}
           />
           <ul className='flex gap-[35px] text-[#ffffff50] font-general-sans-medium'>
             <li className='cursor-pointer'>Home</li>

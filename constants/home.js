@@ -5,6 +5,11 @@ import goldInvest from '@/public/assets/home/gold-invest.svg';
 import depositInvest from '@/public/assets/home/deposit-invest.svg';
 import mutualFunds from '@/public/assets/home/mutual-fund.svg';
 
+import bitcoin from '@/public/assets/home/icon_saham/bitcoin.svg';
+import doge from '@/public/assets/home/icon_saham/DOGE.svg';
+import eth from '@/public/assets/home/icon_saham/ETH.svg';
+import sol from '@/public/assets/home/icon_saham/SOL.svg';
+
 function guidGenerator() {
     var S4 = function () {
         return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
@@ -49,4 +54,43 @@ export const getLearning = [
         desc: "Mutual funds are a type of investment where funds from many investors are collected and managed by an investment manager to invest in various assets.",
         thumbnail: mutualFunds,
     },
-] 
+]
+
+export const getSaham = [
+    {
+        id: guidGenerator(),
+        title: "BTC/IDR",
+        subtitle: "Bitcoin",
+        icon: bitcoin,
+        numberSaham: "0.75%",
+        price: "Rp 876.000.000",
+        down: true,
+    },
+    {
+        id: guidGenerator(),
+        title: "ETH/IDR",
+        subtitle: "Ethereum",
+        icon: eth,
+        numberSaham: "0.14%",
+        price: "Rp 36.090.000",
+        down: true,
+    },
+    {
+        id: guidGenerator(),
+        title: "SOL/IDR",
+        subtitle: "Solana",
+        icon: sol,
+        numberSaham: "0.5%",
+        price: "Rp 2.042.000",
+        down: false,
+    },
+    {
+        id: guidGenerator(),
+        title: "DOGE/IDR",
+        subtitle: "Doge",
+        icon: doge,
+        numberSaham: "0.7%",
+        price: "Rp 2.500.00",
+        down: false,
+    },
+]

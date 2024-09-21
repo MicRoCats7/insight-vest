@@ -1,12 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 import Image from 'next/image';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 
-function CardLearning({ item, isSpecial }) {
+function CardLearning({ item, isSpecial, isOdd }) {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 1024);
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    const cardClass = isMobile
+        ? (isOdd ? 'bg-gradient-card-learning' : 'bg-gradient-card')
+        : (isSpecial ? 'bg-gradient-card-learning' : 'bg-gradient-card');
+
     return (
-        <Card className={`${isSpecial ? 'bg-gradient-card-learning' : 'bg-gradient-card'
-            } border-none rounded-[20px] relative overflow-hidden`}>
+        <Card className={`${cardClass} border-none rounded-[20px] relative overflow-hidden`}>
             <CardHeader>
                 <CardTitle className="drop-shadow-2xl">
                     <p className="text-white font-general-sans-semibold text-[26px]">
@@ -19,8 +37,8 @@ function CardLearning({ item, isSpecial }) {
                     <p className="font-general-sans-regular text-white text-lg">
                         {item.desc}
                     </p>
-                    <div className="flex items-center justify-between bg-[#FFFFFF] w-1/2 rounded-[10px] cursor-pointer mt-4">
-                        <span className="pl-[15px] py-[7px] font-general-sans-semibold">
+                    <div className="flex items-center justify-between bg-[#FFFFFF] lg:w-1/2 md:w-5/6 w-4/5 rounded-[10px] cursor-pointer mt-4">
+                        <span className="pl-[15px] py-[7px] font-general-sans-semibold lg:text-base text-sm">
                             Start Learning
                         </span>
                         <div className="bg-[#EBEBEB] p-2 rounded-r-[10px]">
