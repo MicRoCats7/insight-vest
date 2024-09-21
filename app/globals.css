@@ -12,6 +12,8 @@
 .wrapper {
   padding-left: 150px;
   padding-right: 150px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .font-general-sans-medium {
@@ -26,12 +28,12 @@
   font-family: GeneralSans-Regular;
 }
 
-*{
+* {
   font-family: GeneralSans-Regular;
 }
 
 .special-text{    
-    background: linear-gradient(to right, #FFF 20%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0.5) 60%, #FFF 80%);
+    /* background: linear-gradient(to right, #FFF 20%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0.5) 60%, #FFF 80%);
     background-size: 200% auto;
     display: inline-block;
     color: #000;
@@ -40,7 +42,12 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
-    animation: shine 3s linear infinite;
+    animation: shine 3s linear infinite; */
+    background: #FFFFFF;
+    background: linear-gradient(to right, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
   }
   
   @keyframes shine {
@@ -72,6 +79,14 @@
 	transform: scale(1.1);
 }
 
+.bg-gradient-card {
+  background-image: linear-gradient(to right bottom, #9e33d7, #a841de, #b14fe6, #bb5ced, #c468f5, #bd65ec, #b663e3, #af60da, #974ebf, #803da4, #692c8a, #531b71);
+}
+
+.bg-gradient-card-learning {
+  background-image: linear-gradient(to right bottom, #363636, #464646, #565656, #676767, #787878, #787878, #787878, #787878, #676767, #565656, #464646, #363636);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -85,7 +100,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   max-width: 1440px;
   margin: 0 auto;
-  transition: background ease-in-out 300ms;
 }
 
 @layer utilities {
