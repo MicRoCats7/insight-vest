@@ -27,18 +27,18 @@ function CardLearning({ item, isSpecial, isOdd }) {
         <Card className={`${cardClass} border-none rounded-[20px] relative overflow-hidden`}>
             <CardHeader>
                 <CardTitle className="drop-shadow-2xl">
-                    <p className="text-white font-general-sans-semibold text-[26px]">
+                    <p className="text-white font-general-sans-semibold md:text-[26px] text-xl">
                         {item.title}
                     </p>
                 </CardTitle>
             </CardHeader>
             <CardContent className="flex w-full justify-between relative z-10">
-                <div className="flex flex-col w-[70%]">
-                    <p className="font-general-sans-regular text-white text-lg">
+                <div className="flex flex-col md:w-[70%]">
+                    <p className="font-general-sans-regular text-white md:text-lg text-base">
                         {item.desc}
                     </p>
-                    <div className="flex items-center justify-between bg-[#FFFFFF] lg:w-1/2 md:w-5/6 w-4/5 rounded-[10px] cursor-pointer mt-4">
-                        <span className="pl-[15px] py-[7px] font-general-sans-semibold lg:text-base text-sm">
+                    <div className="flex items-center justify-between bg-[#FFFFFF] lg:w-1/2 md:w-5/6 rounded-[10px] cursor-pointer mt-4">
+                        <span className="pl-[15px] py-[7px] font-general-sans-semibold lg:text-base md:text-sm text-xs">
                             Start Learning
                         </span>
                         <div className="bg-[#EBEBEB] p-2 rounded-r-[10px]">

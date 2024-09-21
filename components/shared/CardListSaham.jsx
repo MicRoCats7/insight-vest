@@ -13,29 +13,29 @@ function CardListSaham({ item }) {
                     />
                     <div className="flex flex-col">
                         <CardTitle className="drop-shadow-2xl">
-                            <p className="text-white font-general-sans-semibold text-lg">
+                            <p className="text-white font-general-sans-semibold md:text-lg text-sm">
                                 {item.title}
                             </p>
                         </CardTitle>
-                        <CardDescription className="text-white font-general-sans-medium text-xs">{item.subtitle}</CardDescription>
+                        <CardDescription className="text-[#ffffff60] font-general-sans-medium text-xs">{item.subtitle}</CardDescription>
                     </div>
                 </div>
                 <div className="flex items-center">
                     {item.down === true ? (
                         <>
                             <RiArrowDownSFill size={40} color="#FF4141" />
-                            <span className="font-general-sans-semibold text-lg text-[#FF4141]">0.75%</span>
+                            <span className="font-general-sans-semibold md:text-lg text-sm text-[#FF4141]">{item.numberSaham}</span>
                         </>
                     ) : (
                         <>
                             <RiArrowUpSFill size={40} color="#41FF54" />
-                            <span className="font-general-sans-semibold text-lg text-[#41FF54]">0.75%</span>
+                            <span className="font-general-sans-semibold md:text-lg text-sm text-[#41FF54]">{item.numberSaham}</span>
                         </>
 
                     )}
                 </div>
             </div>
-            <span className="font-general-sans-semibold text-[22px] text-white">{item.price}</span>
+            <span className="font-general-sans-semibold md:text-[22px] text-base text-white">{item.price}</span>
         </Card>
     )
 }

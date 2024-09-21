@@ -19,6 +19,7 @@ function Navbar() {
                         <Image
                             src={logo}
                             alt='Logo'
+                            className='cursor-pointer w-[150px] md:w-[200px]'
                         />
                     </div>
                     <div className='hidden md:block'>

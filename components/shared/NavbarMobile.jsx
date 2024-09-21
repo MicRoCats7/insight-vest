@@ -21,7 +21,7 @@ function NavbarMobile() {
         <section>
             <Sheet>
                 <SheetTrigger asChild>
-                    <GiHamburgerMenu size={30} className="cursor-pointer" />
+                    <GiHamburgerMenu size={20} className="cursor-pointer" />
                 </SheetTrigger>
                 <SheetContent className="bg-[#191A19] border-none">
                     <div className="grid gap-4 py-4">
