@@ -16,6 +16,13 @@
   margin: 0 auto;
 }
 
+.wrapper-mobile {
+  padding-left: 25px;
+  padding-right: 25px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 .font-general-sans-medium {
   font-family: GeneralSans-Medium;
 }

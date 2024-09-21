@@ -1,23 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 import Image from 'next/image';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import Link from 'next/link';
 
-function CardLearning({ item, isSpecial }) {
+function CardLearning({ item, isSpecial, isOdd }) {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 1024);
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    const cardClass = isMobile
+        ? (isOdd ? 'bg-gradient-card-learning' : 'bg-gradient-card')
+        : (isSpecial ? 'bg-gradient-card-learning' : 'bg-gradient-card');
+
     return (
-        <Card className={`${isSpecial ? 'bg-gradient-card-learning' : 'bg-gradient-card'
-            } border-none rounded-[20px] relative overflow-hidden`}>
+        <Card className={`${cardClass} border-none rounded-[20px] relative overflow-hidden`}>
             <CardHeader>
                 <CardTitle className="drop-shadow-2xl">
-                    <p className="text-white font-general-sans-semibold text-[26px]">
+                    <p className="text-white font-general-sans-semibold md:text-[26px] text-xl">
                         {item.title}
                     </p>
                 </CardTitle>
             </CardHeader>
             <CardContent className="flex w-full justify-between relative z-10">
-                <div className="flex flex-col w-[70%]">
-                    <p className="font-general-sans-regular text-white text-lg">
+                <div className="flex flex-col md:w-[70%]">
+                    <p className="font-general-sans-regular text-white md:text-lg text-base">
                         {item.desc}
                     </p>
                     <Link href={`education/${item.id}`}>
@@ -28,6 +46,7 @@ function CardLearning({ item, isSpecial }) {
                             <div className="bg-[#EBEBEB] p-2 rounded-r-[10px]">
                                 <MdKeyboardArrowRight size={25} />
                             </div>
+
                         </div>
                     </Link>
                 </div>

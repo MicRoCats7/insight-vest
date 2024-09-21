@@ -5,24 +5,24 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 import React from 'react'
+import NavbarMobile from './NavbarMobile';
+import logo from '@/public/assets/logo-insightVest.svg'
 
 function Navbar() {
     const pathName = usePathname();
 
     return (
         <section className='py-5 bg-transparent'>
-            <div className='wrapper'>
+            <div className='md:wrapper wrapper-mobile'>
                 <div className='flex items-center justify-between'>
                     <div className='flex items-center gap-4'>
                         <Image
-                            src="/assets/Ellipse 1.svg"
+                            src={logo}
                             alt='Logo'
-                            width={40}
-                            height={40}
+                            className='cursor-pointer w-[150px] md:w-[200px]'
                         />
-                        <h1>Logo</h1>
                     </div>
-                    <div>
+                    <div className='hidden md:block'>
                         <ul className='flex items-center gap-9 font-general-sans-medium'>
                             {headerLinks.map((link, index) => {
                                 const isActive = pathName === link.route;
@@ -37,6 +37,9 @@ function Navbar() {
                                 );
                             })}
                         </ul>
+                    </div>
+                    <div className='md:hidden'>
+                        <NavbarMobile />
                     </div>
                 </div>
             </div>
