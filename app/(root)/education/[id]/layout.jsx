@@ -22,7 +22,7 @@ export default function page({ params, children }) {
     }, [])
 
     return (
-        <section className="wrapper pb-20">
+        <section className="md:wrapper wrapper-mobile pb-20">
             <div className='flex items-center gap-2.5 mt-16'>
                 <Image
                     src={iconLight}

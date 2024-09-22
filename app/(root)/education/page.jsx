@@ -8,7 +8,7 @@ export default function page() {
     const specialIndexes = [1, 2, 5];
 
     return (
-        <section className="wrapper pb-20">
+        <section className="md:wrapper wrapper-mobile pb-20">
             <div style={{
                 backgroundImage: "url('/assets/education/bg_noise_&_texture_education.png')",
                 backgroundSize: "100%",
@@ -27,16 +27,21 @@ export default function page() {
             />
 
             <div className='mt-24 mb-20'>
-                <h1 className='leading-[50px] h-28 w-full whitespace-pre-line text-[55px] font-general-sans-semibold text-center bg-gradient-to-r from-[#FFFFFF80] via-white to-[#FFFFFF80] inline-block text-transparent bg-clip-text'>
+                <h1 className='leading-[50px] lg:h-28 w-full lg:whitespace-pre-line md:text-[55px] text-[35px] font-general-sans-semibold text-center bg-gradient-to-r from-[#FFFFFF80] via-white to-[#FFFFFF80] inline-block text-transparent bg-clip-text'>
                     {`Explore the World of Investment
                     with the Right Insights`}
                 </h1>
-                <p className='mt-5 text-2xl text-center opacity-60'>We guide you to understand the risks, opportunities and smart ways to invest.</p>
+                <p className='mt-5 md:text-2xl text-lg text-center opacity-60'>We guide you to understand the risks, opportunities and smart ways to invest.</p>
             </div>
 
-            <div className='grid grid-cols-2 gap-5'>
+            <div className='grid md:grid-cols-2 grid-cols-1 gap-5'>
                 {getAllEducation.map((item, index) => (
-                    <CardLearning key={index} item={item} isSpecial={specialIndexes.includes(index)} />
+                    <CardLearning
+                        key={index}
+                        item={item}
+                        isSpecial={specialIndexes.includes(index)}
+                        isOdd={index % 2 !== 0}
+                    />
                 ))}
             </div>
         </section>

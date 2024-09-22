@@ -12,14 +12,15 @@ export default function page({ params }) {
             {educationDetail.material.sub_material.map((item, index) => (
                 <Link href={`/education/${params.id}/material/${item.id}/${index + 1}/${item.content[0].id}`}>
                     <div key={index} className='w-full rounded-[20px] bg-[#232523] p-5 flex justify-between items-center'>
-                        <div className='flex items-center gap-7'>
+                        <div className='flex items-center md:gap-7 gap-3'>
                             <div className='w-16 h-16 bg-[#363736] flex items-center justify-center rounded-xl'>
                                 <Image
                                     src={iconTask}
                                     alt='icon task'
+                                    className='md:w-8 md:h-8'
                                 />
                             </div>
-                            <h1 className='font-general-sans-semibold text-2xl'>{index + 1}. {item.chapter_title}</h1>
+                            <h1 className='font-general-sans-semibold md:text-2xl text-xl w-[200px] md:w-auto'>{index + 1}. {item.chapter_title}</h1>
                         </div>
                         <div>
                             <Image

@@ -14,12 +14,12 @@ export default function page({ params }) {
     let nextIDMaterial = ListMaterialDetail.content[currentIndexMaterial + 1]?.id
 
     return (
-        <div className='mt-5 grid grid-cols-3 gap-10'>
-            <div className='col-span-1'>
+        <div className='mt-5 grid md:grid-cols-3 grid-cols-1 md:gap-10'>
+            <div className='md:col-span-1 mb-12 md:mb-0'>
                 {ListMaterialDetail.content.map((item, index) => (
-                    <div key={index} className='border-b-2 border-[#2B2B2B] pb-5'>
+                    <div key={index} className='border-b-2 border-[#2B2B2B] py-5'>
                         <Link href={`${item.id}`}>
-                            <h1 className='text-2xl font-general-sans-medium'>{`${params.MaterialId[1]}.${index + 1}`} {item.heading}</h1>
+                            <h1 className='md:text-2xl text-lg font-general-sans-medium'>{`${params.MaterialId[1]}.${index + 1}`} {item.heading}</h1>
                         </Link>
                     </div>
                 ))}
