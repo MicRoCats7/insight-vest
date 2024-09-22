@@ -39,8 +39,8 @@
   font-family: GeneralSans-Regular;
 }
 
-.special-text{    
-    /* background: linear-gradient(to right, #FFF 20%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0.5) 60%, #FFF 80%);
+.special-text {
+  /* background: linear-gradient(to right, #FFF 20%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0.5) 60%, #FFF 80%);
     background-size: 200% auto;
     display: inline-block;
     color: #000;
@@ -50,40 +50,40 @@
     -webkit-text-fill-color: transparent;
     
     animation: shine 3s linear infinite; */
-    background: #FFFFFF;
-    background: linear-gradient(to right, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-  }
-  
-  @keyframes shine {
-    to {
-      background-position: 200% center;
-    }
-  }
+  background: #FFFFFF;
+  background: linear-gradient(to right, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
 
-.cool-hover{
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.cool-hover {
   background: linear-gradient(0deg, #7A1CAC, #7A1CAC) no-repeat right bottom / 0 var(--bg-h);
   transition: background-size 500ms;
   --bg-h: 100%;
 }
 
-.cool-hover:where(:hover, :focus-visible){
+.cool-hover:where(:hover, :focus-visible) {
   background-size: 100% var(--bg-h);
   background-position-x: left;
 }
 
-.cool-hover-img{
+.cool-hover-img {
   -webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
 }
 
-.cool-hover-img:hover{
+.cool-hover-img:hover {
   -webkit-transform: scale(1.1);
-	transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .bg-gradient-card {
@@ -105,7 +105,6 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-  max-width: 1440px;
   margin: 0 auto;
 }
 
