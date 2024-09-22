@@ -9,6 +9,7 @@ import { getLearning, getSaham } from '@/constants/home';
 import CardListSaham from '@/components/shared/CardListSaham';
 import { getMustReadNews } from "@/constants/news";
 import Loading from '@/components/shared/Loading';
+import Link from 'next/link';
 
 export default function Home() {
   const specialIndexes = [1, 2, 5];
@@ -93,34 +94,49 @@ export default function Home() {
       </div>
 
       <div className="mb-[100px]">
-        <h1 className="special-text font-general-sans-semibold md:text-3xl text-2xl mb-5">Investment News</h1>
-        <div className="grid md:grid-cols-4 grid-cols-2 grid-rows-2 gap-2.5">
+        <h1 className="text-xl md:text-2xl lg:text-3xl special-text font-general-sans-semibold mb-5">Must Read</h1>
+        <div className="grid lg:grid-cols-2 xl:grid-cols-4 xl:grid-rows-2 gap-5">
           {getMustReadNews.map((news, index) => {
             if (index != 2) {
               return (
-                <div key={news.id} className={`relative col-span-1`}>
-                  <Image
-                    className={`md:mb-5 mb-2 md:w-[270px] w-full md:h-[180px] h-[150px] rounded-[20px]`}
-                    src={news.thumbnail}
-                    alt={news.title}
-                  />
-                  <p className="md:mb-5 mb-2 md:text-[22px] text-sm leading-6 font-general-sans-semibold">{news.title}</p>
-                  <p className="font-general-sans-medium md:text-base text-xs opacity-60">{news.date}</p>
+                <div key={news.id} className={`col-span-1`}>
+                  <Link href={`news/${news.id}`}>
+                    <div className="w-full h-1/2 md:h-2/3 xl:w-full xl:h-[180px] mb-5 rounded-[20px] relative overflow-hidden">
+                      <Image
+                        className={`cool-hover-img w-full h-full xl:h-[180px] rounded-[20px]`}
+                        sizes="100vw"
+                        src={news.thumbnail}
+                        alt={news.title}
+                      />
+                    </div>
+                    <p className="mb-2.5 lg:mb-5">
+                      <span className="cool-hover text-sm md:text-base lg:text-[22px] leading-3 lg:leading-6 font-general-sans-semibold">
+                        {news.title}
+                      </span>
+                    </p>
+                  </Link>
+                  <p className="font-general-sans-medium text-xs md:text-sm lg:text-base opacity-60">{news.date}</p>
                 </div>
               )
             } else {
               return (
                 <div key={news.id} className={`relative col-span-2 row-span-2`}>
-                  <div className="bg-gradient-to-b from-transparent to-black absolute w-full h-full rounded-[20px]"></div>
-                  <Image
-                    className={`mb-5 object-cover w-full h-full rounded-[20px]`}
-                    src={news.thumbnail}
-                    alt={news.title}
-                  />
-                  <div className="absolute bottom-0 p-5">
-                    <p className="mb-5 md:text-[22px] text-base font-general-sans-semibold">{news.title}</p>
-                    <p className="font-general-sans-medium md:text-base text-sm opacity-60">{news.date}</p>
-                  </div>
+                  <Link href={`news/${news.id}`}>
+                    <div className="bg-gradient-to-b from-transparent to-black absolute w-full h-full rounded-[20px]"></div>
+                    <Image
+                      className={`mb-5 object-cover w-full h-full rounded-[20px]`}
+                      src={news.thumbnail}
+                      alt={news.title}
+                    />
+                    <div className="absolute bottom-0 p-2.5 md:p-5">
+                      <p className="mb-5">
+                        <span className="cool-hover text-sm md:text-base lg:text-[22px] font-general-sans-semibold">
+                          {news.title}
+                        </span>
+                      </p>
+                      <p className="font-general-sans-medium text-xs md:text-sm lg:text-base opacity-60">{news.date}</p>
+                    </div>
+                  </Link>
                 </div>
               )
             }

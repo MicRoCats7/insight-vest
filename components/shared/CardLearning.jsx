@@ -53,11 +53,11 @@ function CardLearning({ item, isSpecial, isOdd }) {
                 </CardHeader>
                 <CardContent className="flex w-full justify-between relative z-10">
                     <div className="flex flex-col md:w-[70%]">
-                        <p className="font-general-sans-regular text-white md:text-lg text-base">
+                        <p className="font-general-sans-regular text-white md:text-lg text-base [text-shadow:_0_4px_4px_rgb(0_0_0_/_0.49)]">
                             {item.desc}
                         </p>
                         <Link href={`education/${item.id}`} onClick={handleCardClick}>
-                            <div className="flex items-center justify-between bg-[#FFFFFF] w-1/2 rounded-[10px] cursor-pointer mt-4">
+                            <div className="flex items-center justify-between bg-[#FFFFFF] lg:w-1/2 w-full rounded-[10px] cursor-pointer mt-4">
                                 <span className="pl-[15px] py-[7px] font-general-sans-semibold">
                                     Start Learning
                                 </span>
