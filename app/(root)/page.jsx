@@ -8,6 +8,7 @@ import CardLearning from '@/components/shared/CardLearning';
 import { getLearning, getSaham } from '@/constants/home';
 import CardListSaham from '@/components/shared/CardListSaham';
 import { getMustReadNews } from "@/constants/news";
+import Loading from '@/components/shared/Loading';
 
 export default function Home() {
   const specialIndexes = [1, 2, 5];
