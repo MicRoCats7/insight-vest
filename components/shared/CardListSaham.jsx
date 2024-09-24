@@ -4,7 +4,7 @@ import { RiArrowDownSFill, RiArrowUpSFill } from "react-icons/ri";
 
 function CardListSaham({ item }) {
     return (
-        <Card className="bg-gradient-card-learning p-4 rounded-[20px] border-gray-500 border-2">
+        <Card className="carousel-card bg-gradient-card-learning p-4 rounded-[20px] border-gray-500 border-2">
             <div className="flex items-start justify-between mb-[15px]">
                 <div className="flex items-start gap-[10px]">
                     <Image

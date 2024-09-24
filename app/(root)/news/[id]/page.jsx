@@ -21,7 +21,7 @@ export default function page({ params }) {
     }, [])
 
     return (
-        <section className="px-[25px] md:px-[75px] lg:px-[150px] mt-14 flex flex-col xl:flex-row gap-10">
+        <section className="md:wrapper wrapper-mobile pt-14 flex flex-col xl:flex-row gap-10">
             <div className='w-full xl:w-[753px]'>
                 <h1 className="font-general-sans-semibold text-xl md:text-2xl lg:text-3xl leading-7 mb-5">{newsDetail.title}</h1>
                 <p className="font-general-sans-medium text-sm md:text-base lg:text-lg text-start mb-5">{newsDetail.date}</p>
@@ -41,7 +41,7 @@ export default function page({ params }) {
                             <Link href={`${item.id}`}>
                                 <div className='relative overflow-hidden h-[200px] rounded-[20px] mb-2.5 lg:mb-5'>
                                     <Image
-                                        className="w-full h-auto rounded-[20px] object-cover"
+                                        className="cool-hover-img w-full h-auto rounded-[20px] object-cover"
                                         fill
                                         src={item.thumbnail}
                                         alt={item.title}

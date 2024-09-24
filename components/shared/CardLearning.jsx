@@ -1,15 +1,18 @@
 "use client"
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 import Image from 'next/image';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import Link from 'next/link';
 import Loading from './Loading';
+import { useInView } from "framer-motion"
 
 function CardLearning({ item, isSpecial, isOdd }) {
     const [isMobile, setIsMobile] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true })
 
     useEffect(() => {
         const handleResize = () => {
@@ -43,7 +46,15 @@ function CardLearning({ item, isSpecial, isOdd }) {
                     <Loading />
                 </div>
             )}
-            <Card className={`${cardClass} border-none rounded-[20px] relative overflow-hidden`}>
+            <Card
+                ref={ref}
+                className={`${cardClass} border-none rounded-[20px] relative overflow-hidden`}
+                style={{
+                    transform: isInView ? "none" : "translateX(-200px)",
+                    opacity: isInView ? 1 : 0,
+                    transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+                }}
+            >
                 <CardHeader>
                     <CardTitle className="drop-shadow-2xl">
                         <p className="text-white font-general-sans-semibold md:text-[26px] text-xl">

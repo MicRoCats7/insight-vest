@@ -40,28 +40,13 @@
 }
 
 .special-text{    
-    /* background: linear-gradient(to right, #FFF 20%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0.5) 60%, #FFF 80%);
-    background-size: 200% auto;
-    display: inline-block;
-    color: #000;
-    background-clip: text;
-    text-fill-color: transparent;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
-    animation: shine 3s linear infinite; */
     background: #FFFFFF;
     background: linear-gradient(to right, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
   }
-  
-  @keyframes shine {
-    to {
-      background-position: 200% center;
-    }
-  }
+
 
 .cool-hover{
   background: linear-gradient(0deg, #7A1CAC, #7A1CAC) no-repeat right bottom / 0 var(--bg-h);
@@ -70,6 +55,11 @@
 }
 
 .cool-hover:where(:hover, :focus-visible){
+  background-size: 100% var(--bg-h);
+  background-position-x: left;
+}
+
+.news-card:hover .cool-hover{
   background-size: 100% var(--bg-h);
   background-position-x: left;
 }
