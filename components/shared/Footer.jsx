@@ -18,7 +18,7 @@ function Footer() {
           <ul className='flex md:flex-row flex-col md:gap-[35px] gap-3 text-base text-[#ffffff50] font-general-sans-medium'>
             <li className='cursor-pointer'>Home</li>
             <li className='cursor-pointer'>About</li>
-            <li className='cursor-pointer'>Services</li>
+            <li className='cursor-pointer'>News</li>
           </ul>
         </div>
         <div className='flex items-center gap-4 mt-[65px]'>

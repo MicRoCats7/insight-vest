@@ -79,20 +79,51 @@ export default function Home() {
     hover: { scale: 1.05 },
   };
 
+  // change bg noise
+  useEffect(() => {
+    document.body.style.backgroundColor = "#191A19";
+    document.body.style.backgroundImage = "url('/assets/home/bg-noise-home.png')";
+    document.body.style.backgroundSize = "100%";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.height = "100%";
+    document.body.style.position = "absolute";
+    document.body.style.top = "0";
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.bottom = "0";
+    document.body.style.zIndex = "-1";
+
+    return () => {
+      document.body.style.backgroundColor = '';
+      document.body.style.backgroundImage = '';
+      document.body.style.backgroundSize = '';
+      document.body.style.backgroundRepeat = '';
+      document.body.style.height = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.bottom = '';
+      document.body.style.zIndex = '';
+    };
+  }, []);
+
+
   return (
     <section
       className="md:wrapper wrapper-mobile"
     >
       <div style={{
-        backgroundImage: "url('/assets/home/bg-noise-home.png')",
-        backgroundSize: "100%",
-        backgroundRepeat: "no-repeat",
-        height: "100%",
-        position: "absolute",
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: -1,
+        // backgroundImage: "url('/assets/home/bg-noise-home.png')",
+        // backgroundSize: "100%",
+        // backgroundRepeat: "no-repeat",
+        // height: "100%",
+        // position: "absolute",
+        // top: 0,
+        // left: 0,
+        // right: 0,
+        // bottom: 0,
+        // zIndex: -1,
       }} />
 
       <div className='lg:mt-[100px] md:mt-[50px] mt-[15px] relative'>
