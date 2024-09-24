@@ -113,19 +113,6 @@ export default function Home() {
     <section
       className="md:wrapper wrapper-mobile"
     >
-      <div style={{
-        // backgroundImage: "url('/assets/home/bg-noise-home.png')",
-        // backgroundSize: "100%",
-        // backgroundRepeat: "no-repeat",
-        // height: "100%",
-        // position: "absolute",
-        // top: 0,
-        // left: 0,
-        // right: 0,
-        // bottom: 0,
-        // zIndex: -1,
-      }} />
-
       <div className='lg:mt-[100px] md:mt-[50px] mt-[15px] relative'>
         <motion.div
           initial={{
