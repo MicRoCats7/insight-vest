@@ -11,6 +11,7 @@ import { animate, motion, useMotionValue } from "framer-motion"
 import { useEffect } from 'react';
 import useMeasure from 'react-use-measure';
 import MustReadNewsGrid from '@/components/shared/MustReadNewsGrid';
+import Link from 'next/link';
 
 export default function Home() {
   const specialIndexes = [1, 2, 5];
@@ -186,18 +187,21 @@ export default function Home() {
         className='lg:w-3/5 font-general-sans-regular md:text-xl text-base text-[#ffffff60] my-10'>
         An investment education platform that provides complete guidance to help you invest smartly in various instruments, Such as shares, Gold, Deposits, Mutual funds, Crypto and property.
       </motion.p>
-      <motion.div initial={{ opacity: 0, y: 100 }} animate={{ opacity: 100, y: 0 }} transition={{ delay: 0.5 }} className='flex items-center justify-between bg-[#9E33D7] lg:w-[18%] md:w-[28%] w-full rounded-[10px] cursor-pointer'>
-        <span className='pl-[15px] py-[7px] font-general-sans-semibold'>Explore and Learn</span>
-        <div className='bg-[#7A1CAC] p-2 rounded-r-[10px]'>
-          <MdKeyboardArrowRight size={25} />
-        </div>
-      </motion.div>
+      <Link href={'/education'}>
+        <motion.div initial={{ opacity: 0, y: 100 }} animate={{ opacity: 100, y: 0 }} transition={{ delay: 0.5 }} className='flex items-center justify-between bg-[#9E33D7] lg:w-[18%] md:w-[28%] w-full rounded-[10px] cursor-pointer'>
+          <span className='pl-[15px] py-[7px] font-general-sans-semibold'>Explore and Learn</span>
+          <div className='bg-[#7A1CAC] p-2 rounded-r-[10px]'>
+            <MdKeyboardArrowRight size={25} />
+          </div>
+        </motion.div>
+      </Link>
 
       <motion.div initial={{ opacity: 0, scale: 0.1 }} animate={{ opacity: 100, scale: 1 }} transition={{ delay: 0.9 }} className='relative md:my-[100px] my-[50px] flex justify-center items-center flex-col'>
         <Image
           src={circle_invest}
           alt="circle_invest"
           style={{ pointerEvents: 'none' }}
+          priority={true}
         />
         <h1
           className='font-general-sans-semibold lg:text-[48px] md:text-[35px] text-[12px] text-center w-[55%] special-text absolute'

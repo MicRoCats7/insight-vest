@@ -20,6 +20,7 @@ function Navbar() {
                             src={logo}
                             alt='Logo'
                             className='cursor-pointer w-[150px] md:w-[200px]'
+                            priority={true}
                         />
                     </div>
                     <div className='hidden md:block'>

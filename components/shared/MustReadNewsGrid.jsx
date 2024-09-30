@@ -7,6 +7,7 @@ import Link from 'next/link';
 function MustReadNewsGrid({ news, index, itemVariants }) {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true })
+
     if (index !== 2) {
         return (
             <motion.div
@@ -17,8 +18,7 @@ function MustReadNewsGrid({ news, index, itemVariants }) {
                     transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
                 }}
                 className="col-span-1 news-card"
-                variants={itemVariants}
-                whileHover="hover"
+            // variants={itemVariants}
             >
                 <Link href={`news/${news.id}`}>
                     <div className="w-full h-1/2 md:h-2/3 xl:w-full xl:h-[180px] mb-5 rounded-[20px] relative overflow-hidden">
@@ -52,8 +52,7 @@ function MustReadNewsGrid({ news, index, itemVariants }) {
                     transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
                 }}
                 className="relative col-span-2 row-span-2 news-card"
-                variants={itemVariants}
-                whileHover="hover"
+            // variants={itemVariants}
             >
                 <Link href={`news/${news.id}`}>
                     <div className="bg-gradient-to-b from-transparent to-black absolute w-full h-full rounded-[20px]"></div>
